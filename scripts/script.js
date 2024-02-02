@@ -4,6 +4,9 @@ $(document).ready(function(){
       //code goes here
       console.log("position: ", $('#grumpycat').position() );
     });
+    $("#map").draggable({
+      containment: $('#container')
+  });
   //works
   $("#grumpycat").click(function(){
 $("#grumpycat").attr('src','https://piximus.net/media2/71110/family-guy-memes-9.jpeg')
@@ -12,10 +15,10 @@ $("#grumpycat").attr('src','https://piximus.net/media2/71110/family-guy-memes-9.
   $("#grumpycat").draggable({
     stop: function(){
       // when in given position inform user they didnt lose.
-      if(  $('#grumpycat').position().left > 600){
+      if(  $('#grumpycat').position().left > 100 && $('#grumpycat').position().top > 50){
           alert("Congratulations, you didn't win!");
     }
-      else if ($('#grumpycat').position().left > 300 && $('#grumpycat').position().top < 600 ){
+      else if ($('#grumpycat').position().top < 300){
         alert("not quite there yet!")
       }
       else{
@@ -24,8 +27,5 @@ $("#grumpycat").attr('src','https://piximus.net/media2/71110/family-guy-memes-9.
     }
   });
     
-  // when in given position inform user they didnt lose.
-  
-  // check assets for additional resources to complete the work.
   
 });
